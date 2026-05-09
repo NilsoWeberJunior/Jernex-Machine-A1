@@ -9,7 +9,7 @@ Se você quiser rodar ele, siga os seguintes passos:
 
 1. Tenha o JDK instalado
 2. Baixe ou clone os arquivos `.java` deste repositório para o seu computador.
-3. Abra o terminal na pasta onde os códigos-fontes estão salvos (pasta raiz geralmente é: `JernexMachineA1System/src`).
+3. Abra o terminal na pasta onde os códigos-fontes estão salvos (pasta raiz geralmente é: `JernexMachineSystem/src`).
 4. **Compile o código** usando o compilador do Java:
    ```bash
    javac JernexBootLoader.java
