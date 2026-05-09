@@ -39,10 +39,10 @@ public class JernexBootLoader {
         ImageIcon appIcon = ImageManagement.SearchArchiveInThisJarAndTransformToIcon("JernexMachineSystem/assets/JernexMachineA1Logo.png", JernexBootLoader.class);
 
         if (appIcon != null) {
-            // 3. Transforma o ImageIcon em Image (o JFrame precisa de uma Image pura!)
+
             Image iconImage = appIcon.getImage();
 
-            // 4. Define o ícone da janela principal e da barra de tarefas!
+
             root.setIconImage(iconImage);
         }
 

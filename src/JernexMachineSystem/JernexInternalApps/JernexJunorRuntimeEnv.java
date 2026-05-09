@@ -20,7 +20,6 @@ public class JernexJunorRuntimeEnv {
             return "";
         }
 
-        // Criamos o Matcher para verificar se o comando bate com show("texto")
         Matcher showMatcher = SHOW_PATTERN.matcher(commandLine);
         Matcher secretAudioMatcher = SecretAUDIOPattern.matcher(commandLine);
         Matcher msgBoxCreatorMatcher = CreateMessageDialogPattern.matcher(commandLine);
@@ -28,11 +27,10 @@ public class JernexJunorRuntimeEnv {
 
 
         if (showMatcher.matches()) {
-            // matcher.group(1) pega exatamente o que foi capturado dentro das aspas (.*)
             return showMatcher.group(1);
         }
 
-        // Se o usuário digitar "help"
+
         if (commandLine.equalsIgnoreCase("help")) {
             return "Comandos da Jernex:\nshow(\"text\")|  - Exibe um texto na tela verde\n" +
                     "components.audio.play:(\"secret_audio\")| - Easter Egg\n" +
@@ -53,7 +51,7 @@ public class JernexJunorRuntimeEnv {
             return "Playing Secret Sound";
         }
 
-        // Se não reconhecer a sintaxe
+
         return "Erro de Sintaxe: Comando inválido ou mal formatado: \"" + commandLine + "\" <- AQUI";
     }
 }
