@@ -78,7 +78,7 @@ public class CoreUI {
         VMFilesManagement.TXT(Desktop, "teste de texto", "Obrigado por utilizar a jernex Machine!");
 
         DialogMsgApp.Create(Desktop, "VERSÃO BETA", "AVISO: você está utilizando uma versão beta da JernexMachine geração A1, ou seja, podem ocorrer falhas durante o uso ou crashs indevidos. Agradeço sua compreenção :)");
-//
+
 
         //end-----------------
         taskbar.add(initButtom);

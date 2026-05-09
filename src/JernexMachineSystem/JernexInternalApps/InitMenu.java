@@ -15,7 +15,7 @@ public class InitMenu {
         TheInitMenu.setVisible(false);
 
         SystemDesktop.add(TheInitMenu, Integer.valueOf(100));
-//
+
         //apps (são infelizmente grudados no código... mas tentarei no futuro fazer com que pessoas consigam fazer apps sem precisar modificar diretamente a InitMenu)
         NotesApp.Create(SystemDesktop, TheInitMenu);
         JernexTerminal.Create(SystemDesktop, TheInitMenu);
