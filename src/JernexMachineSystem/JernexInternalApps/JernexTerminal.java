@@ -33,7 +33,7 @@ public class JernexTerminal {
             JPanel panel1 = new JPanel(new BorderLayout());
 
 
-
+//
 
             appWindow.moveToFront();
 

@@ -43,7 +43,7 @@ public class NotesApp {
 
         initMenu.add(appButton);
 
-
+//
     }
     public static void OpenArchive(JDesktopPane desktop, String ArchiveName, String ArchiveContent) {
         JInternalFrame appWindow = new JInternalFrame("Notes App", true, true, true, true);

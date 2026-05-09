@@ -24,7 +24,7 @@ public class JernexJunorRuntimeEnv {
         Matcher secretAudioMatcher = SecretAUDIOPattern.matcher(commandLine);
         Matcher msgBoxCreatorMatcher = CreateMessageDialogPattern.matcher(commandLine);
 
-
+//
 
         if (showMatcher.matches()) {
             return showMatcher.group(1);
