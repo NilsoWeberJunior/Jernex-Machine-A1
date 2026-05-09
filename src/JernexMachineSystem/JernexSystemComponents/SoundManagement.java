@@ -14,7 +14,7 @@ public class SoundManagement {
                     clip.close(); // FECHA AQUI!
                 }
             });
-//
+
             clip.start();
         } catch (Exception e) {
             System.err.println("Deu ruim no som: " + e.getMessage());
