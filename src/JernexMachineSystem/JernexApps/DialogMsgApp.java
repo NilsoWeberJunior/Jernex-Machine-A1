@@ -16,7 +16,7 @@ public class DialogMsgApp {
         Image appIcon = appIconFile.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
         appWindow.setFrameIcon(new ImageIcon(appIcon));
 
-
+//
 
         appWindow.setCursor(desktop.getCursor());
 

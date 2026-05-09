@@ -7,7 +7,7 @@ import java.net.URL;
 public class FilesManagement {
     public static URL SearchArchiveInThisJar(String fileName, Class<?> referenceClass) {
         URL fileURL = referenceClass.getResource("/" + fileName);
-
+//
         return fileURL;
     }
     public static URL SearchArchiveInThisRelativeLocal(String fileName, Class<?> referenceClass) {
