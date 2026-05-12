@@ -1,12 +1,15 @@
 import JernexMachineSystem.CoreUI;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 import java.net.URL;
 import JernexMachineSystem.JernexSystemComponents.FilesManagement;
 import JernexMachineSystem.JernexSystemComponents.SoundManagement;
 import JernexMachineSystem.JernexSystemComponents.ImageManagement;
 
 public class JernexBootLoader {
+    public static JFrame root = new JFrame("NWJ Software Labs - Jernex Machine A1 (BETA)");
+
     public static void Init(JDesktopPane Loading, JFrame root) {
         root.remove(Loading);
         Loading = null;
@@ -23,7 +26,6 @@ public class JernexBootLoader {
 
     public static void main(String[] args) {
         //root----------------------------------------------------------------
-        JFrame root = new JFrame("NWJ Software Labs - Jernex Machine A1 (BETA)");
         root.setSize(900, 900);
         root.setLocationRelativeTo(null);
         //--------------------------------------------------------------------
@@ -57,8 +59,8 @@ public class JernexBootLoader {
 
         int larguraImg = icone.getIconWidth();
         int alturaImg = icone.getIconHeight();
-        loadingProgressBar.setBounds((900 - larguraImg) / 2, (900 - alturaImg) / 2, 200, 25);
-        loadingLabelIcon.setBounds((900 - larguraImg) / 2, (900 - alturaImg) / 5, larguraImg, alturaImg);
+        loadingProgressBar.setBounds(10, 250, 200, 25);
+        loadingLabelIcon.setBounds(10, 0, larguraImg, alturaImg);
 
 
         loading.add(loadingLabelIcon);

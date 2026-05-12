@@ -4,7 +4,6 @@ import JernexMachineSystem.JernexSystemComponents.ImageManagement;
 
 import javax.swing.*;
 import java.awt.*;
-import JernexMachineSystem.JernexInternalApps.JernexJunorRuntimeEnv;
 
 public class JernexTerminal {
 
@@ -42,7 +41,8 @@ public class JernexTerminal {
             textArea.setForeground(Color.green);
             textArea.setEditable(false);
             textArea.append("Copyright (C) NWJ Software Labs\n");
-            textArea.append("Digite \"help\" para listar comandos\n\n");
+            textArea.append("Started a Junor Execution Environment (JEE)\n");
+            textArea.append("Digite \"help\" para listar comandos (no final de cada comando é necessário um \"|\" para dar fim a uma linha, tirando o comando \"help\")\n\n");
 
             JTextField textCommand = new JTextField(20);
             textCommand.setBackground(Color.black);
@@ -62,7 +62,7 @@ public class JernexTerminal {
                 if (!commandText.isEmpty()) {
                     textArea.append("> " + commandText + "\n");
 
-                    String commandReturn = JernexJunorRuntimeEnv.RuntimeStartVerify(commandText, desktop);
+                    String commandReturn = JernexJunorExecutionEnvironment.RuntimeStartVerify(commandText, desktop);
 
 
                     textArea.append(commandReturn + "\n\n");
