@@ -1,6 +1,8 @@
 # Jernex-Machine-A1
 Este repositório é uma simulação de um "Ambiente de Desktop Virtual" em Java (A1: significa a primeira geração da Jernex Machine)
 
+atenção: isto não é nada muito sério, é só um teste de programação java
+
 ## Requisitos
 Java JDK 26 ou superior (recomendado versão de construção: 26.0.1)
 
@@ -12,10 +14,24 @@ Se você quiser rodar ele, siga os seguintes passos:
 3. Abra o terminal na pasta onde os códigos-fontes estão salvos (pasta raiz geralmente é: `src`).
 4. **Compile o código** usando o compilador do Java:
    ```bash
-   javac JernexInitialBoot.JernexBootLoader.java
+   javac JernexInitialBoot/JernexBootLoader.java
    ```
 (Ou você pode também ir em releases e baixar o jar disponível)
    
    
 ## VERSÃO BETA
 A Jernex Machine está em versão beta, não garanto que a Jernex Machine funcione perfeitamente durante o uso.
+
+# ATUALIZAÇÃO DE 31/5/2026
+
+## O que há de novo?
+
+- adicionado a opção de reiniciar a máquina no Energy Options (opções de energia)
+- adicionado novos dialogs para a Jernex Machine (Error e Info)
+- Adicionado o app relógio
+- adicionado o Flash Actions (Ações Flash) que por enquanto mostra a hora
+- música no terminar do timer do relógio
+- novos comandos no terminal (components.msg.msgbox.dialog.createErrorMsg e components.msg.msgbox.dialog.createInfoMsg)
+- atualizado o comando de terminal: de components.msg.msgbox.dialog.create para: components.msg.msgbox.dialog.createWarningMsg
+
+E isso foi tudo por hoje (desculpe a demora na atualização 😉
