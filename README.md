@@ -14,6 +14,7 @@ Se você quiser rodar ele, siga os seguintes passos:
    ```bash
    javac JernexInitialBoot.JernexBootLoader.java
    ```
+(Ou você pode também ir em releases e baixar o jar disponível)
    
    
 ## VERSÃO BETA
