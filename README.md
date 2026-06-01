@@ -12,7 +12,7 @@ Se você quiser rodar ele, siga os seguintes passos:
 3. Abra o terminal na pasta onde os códigos-fontes estão salvos (pasta raiz geralmente é: `src`).
 4. **Compile o código** usando o compilador do Java:
    ```bash
-   javac JernexBootLoader.java
+   javac JernexInitialBoot.JernexBootLoader.java
    ```
    
    

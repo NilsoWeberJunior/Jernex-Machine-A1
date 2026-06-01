@@ -8,42 +8,42 @@ import java.net.URL;
 import JernexMachineSystem.JernexSystemComponents.FilesManagement;
 import JernexMachineSystem.JernexSystemComponents.ImageManagement;
 import JernexMachineSystem.JernexSystemComponents.VMFilesManagement;
+import JernexMachineSystem.JernexInternalApps.FlashActionsApp;
 import JernexMachineSystem.JernexApps.DialogMsgApp;
 import JernexMachineSystem.JernexInternalApps.TaskBar;
 import JernexMachineSystem.JernexSystemComponents.SoundManagement;
-import JernexMachineSystem.JernexSystemComponents.FilesManagement;
+import JernexInitialBoot.JernexBootLoader;
 
 public class CoreUI {
     public static JFrame theRoot;
     public static JDesktopPane theDesktop;
 
     public static void Main(JFrame mainRoot) {
-        // ... (Seu código do cursor igualzinho) ...
         theRoot = mainRoot;
+        theRoot.setLayout(new BorderLayout());
+
+        //desktop---------------------------------
+        theDesktop = new JDesktopPane();
+        theDesktop.setBackground(Color.blue);
         try {
             URL cursorURL = FilesManagement.SearchArchiveInThisJar("JernexMachineSystem/assets/JernexMachineCursor.png", CoreUI.class);
             if (cursorURL != null) {
                 Toolkit toolkit = Toolkit.getDefaultToolkit();
                 Image cursorImage = toolkit.getImage(cursorURL);
                 Cursor customCursor = toolkit.createCustomCursor(cursorImage, new Point(0, 0), "JernexCursor");
-                theRoot.setCursor(customCursor);
+                theDesktop.setCursor(customCursor);
             }
         } catch (Exception e) {}
 
-        //desktop---------------------------------
-        theDesktop = new JDesktopPane();
-        theDesktop.setBackground(Color.blue);
         //----------------------------------------
 
-        try {
-            theDesktop.setCursor(theRoot.getCursor());
-        } catch (Exception e) {}
+        FlashActionsApp.Init(theDesktop);
 
         //TaskBar
         TaskBar.Create(theDesktop);
 
         VMFilesManagement.TXT(theDesktop, "teste de texto", "Obrigado por utilizar a jernex Machine!");
-        DialogMsgApp.Create(theDesktop, "VERSÃO BETA", "AVISO: você está utilizando uma versão beta da jernex machine! significa que podem ocorrer falhas ou crashs durante o uso!");
+        DialogMsgApp.CreateWarningMsg(theDesktop, "VERSÃO BETA", "AVISO: você está utilizando uma versão beta da jernex machine! significa que podem ocorrer falhas ou crashs durante o uso!");
 
         //end-----------------
         theRoot.add(theDesktop);
@@ -61,14 +61,11 @@ public class CoreUI {
             theDesktop = null;
         }
 
-
-        JDesktopPane loading = new JDesktopPane();
-
-        loading.setBackground(Color.black);
-
         URL iconeURL = FilesManagement.SearchArchiveInThisJar("JernexMachineSystem/assets/JernexMachineA1Logo.png", CoreUI.class);
 
-        ImageIcon icone = new ImageIcon(iconeURL);
+        URL iconURL = JernexBootLoader.class.getResource("/JernexMachineSystem/assets/JernexMachineA1Logo.png");
+
+        ImageIcon icone = new ImageIcon(iconURL);
 
         ImageIcon appIcon = ImageManagement.SearchArchiveInThisJarAndTransformToIcon("JernexMachineSystem/assets/JernexMachineA1Logo.png", CoreUI.class);
 
@@ -84,11 +81,8 @@ public class CoreUI {
         ShutdownLabel.setBounds(10, 250, 200, 25);
         loadingLabelIcon.setBounds(10, 0, larguraImg, alturaImg);
 
-
-        loading.add(loadingLabelIcon);
-        loading.add(ShutdownLabel);
-
-        theRoot.add(loading);
+        theRoot.add(loadingLabelIcon);
+        theRoot.add(ShutdownLabel);
 
         theRoot.revalidate();
         theRoot.repaint();
@@ -103,5 +97,9 @@ public class CoreUI {
 
         timer.setRepeats(false);
         timer.start();
+    }
+    public static void Restart() {
+        theDesktop.removeAll();
+        JernexBootLoader.RestartFunction();
     }
 }

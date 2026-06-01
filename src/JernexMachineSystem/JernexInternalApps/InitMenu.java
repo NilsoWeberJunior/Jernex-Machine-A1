@@ -2,7 +2,7 @@ package JernexMachineSystem.JernexInternalApps;
 
 import javax.swing.*;
 import JernexMachineSystem.JernexApps.*;
-import JernexMachineSystem.JernexInternalApps.JernexTerminal;
+
 import java.awt.*;
 
 public class InitMenu {
@@ -11,6 +11,8 @@ public class InitMenu {
     public static JDesktopPane SystemDesktop;
 
     public static void Create(JDesktopPane ThisDesktop) {
+        TheInitMenuWindow.getContentPane().removeAll();
+        TheInitMenu.removeAll();
         SystemDesktop = ThisDesktop;
 
         TheInitMenuWindow.setBounds(10, 50, 300, 400);
@@ -31,9 +33,19 @@ public class InitMenu {
         TheInitMenuWindow.setBorder(null);
         TheInitMenu.setBackground(Color.green);
 
-        NotesApp.Create(SystemDesktop, TheInitMenu);
-        JernexTerminal.Create(SystemDesktop, TheInitMenu);
-        TaskManager.Create(SystemDesktop, TheInitMenu);
+        TheInitMenu.setCursor(ThisDesktop.getCursor());
+
+        //apps---------------------------------------------
+        try {
+
+            NotesApp.Create(SystemDesktop, TheInitMenu);
+            JernexTerminal.Create(SystemDesktop, TheInitMenu);
+            TaskManager.Create(SystemDesktop, TheInitMenu);
+            ClockApp.Create(SystemDesktop, TheInitMenu);
+        }  catch (Exception e) {
+            System.out.println("Error to load apps! " + e);
+        }
+        //-------------------------------------------------
     }
 
     public static void Open() {

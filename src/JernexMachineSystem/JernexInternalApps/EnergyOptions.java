@@ -29,8 +29,9 @@ public class EnergyOptions {
             desktop.add(appWindow);
             appWindow.moveToFront();
 
+            //shutdown-----------------------------------------------
             JButton ShutdownButton = new JButton("🛑");
-            ShutdownButton.setToolTipText("Shutdown");
+            ShutdownButton.setToolTipText("Shutdown (cuidado! isto irá fechar a máquina!)");
             ShutdownButton.setBounds(1, 1, 50, 50);
             ShutdownButton.setForeground(Color.red);
 
@@ -39,6 +40,20 @@ public class EnergyOptions {
             });
 
             appWindow.add(ShutdownButton);
+            //-------------------------------------------------------
+
+            //restart------------------------------------------------
+            JButton RestartButton = new JButton("🔄️");
+            RestartButton.setToolTipText("Restart (cuidado, isso fará com que a máquina volte a seu estado anterior!)");
+            RestartButton.setBounds(60, 1, 50, 50);
+            RestartButton.setForeground(Color.green);
+
+            RestartButton.addActionListener(e1 -> {
+                JernexMachineSystem.CoreUI.Restart();
+            });
+
+            appWindow.add(RestartButton);
+            //-------------------------------------------------------
         });
 
         initMenu.add(appButton);

@@ -1,8 +1,9 @@
 package JernexMachineSystem.JernexSystemComponents;
 
 import JernexMachineSystem.JernexApps.NotesApp;
+import JernexMachineSystem.JernexSystemComponents.ImageManagement;
+
 import javax.swing.*;
-import java.awt.*;
 import java.util.HashMap;
 
 public class VMFilesManagement {

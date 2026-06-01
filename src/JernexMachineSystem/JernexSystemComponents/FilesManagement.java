@@ -1,7 +1,5 @@
 package JernexMachineSystem.JernexSystemComponents;
 
-import javax.swing.*;
-import java.awt.*;
 import java.net.URL;
 
 public class FilesManagement {

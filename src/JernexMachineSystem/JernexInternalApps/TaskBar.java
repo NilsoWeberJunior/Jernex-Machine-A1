@@ -4,9 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import JernexMachineSystem.CoreUI;
-import JernexMachineSystem.JernexInternalApps.InitMenu;
 import JernexMachineSystem.JernexSystemComponents.ImageManagement;
-import JernexMachineSystem.JernexInternalApps.EnergyOptions;
 
 public class TaskBar {
     public static boolean InitButtonIsOpened = false;
@@ -14,7 +12,7 @@ public class TaskBar {
     public static void Create(JDesktopPane TheDesktop) {
 
         JInternalFrame TaskBarFrame = new JInternalFrame("components.internal.app.bars.task_bar.name", true, true, true, true);
-
+        TaskBarFrame.getContentPane().removeAll();
 
 
         TaskBarFrame.setBounds(1, 1, 850, 50);
@@ -59,6 +57,7 @@ public class TaskBar {
         taskbar.setBounds(0, 0, 1920, 45);
         TaskBarFrame.setVisible(true);
         taskbar.add(initButtom);
+        taskbar.setCursor(TheDesktop.getCursor());
 
         TaskBarFrame.add(taskbar);
         EnergyOptions.Create(TheDesktop, taskbar);

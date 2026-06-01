@@ -90,7 +90,7 @@ public class TaskManager {
 
                 if (selectedWindow == null) {
 
-                    DialogMsgApp.Create(desktop, "Warning", "Error: select window to close");
+                    DialogMsgApp.CreateWarningMsg(desktop, "Warning", "Error: select window to close");
 
                     return;
                 }
